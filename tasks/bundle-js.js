@@ -22,6 +22,7 @@ module.exports = function createJSBundleTasks(gulp) {
             'src/ui/devtools/index.tsx': `${dir}/ui/devtools/index.js`,
             'src/ui/popup/index.tsx': `${dir}/ui/popup/index.js`,
             'src/ui/stylesheet-editor/index.tsx': `${dir}/ui/stylesheet-editor/index.js`,
+            'web-archives/src/darkreader.ts': `web-archives/build/darkreader.js`,
         };
         try {
             const bundles = Object.entries(files).map(([src, dest]) => bundleJSEntry({src, dest, production}));
@@ -58,6 +59,9 @@ module.exports = function createJSBundleTasks(gulp) {
             strict: true,
             format: 'iife',
             sourcemap: production ? false : 'inline',
+            output: {
+                name: "darkreader"
+            }
         });
     }
 };

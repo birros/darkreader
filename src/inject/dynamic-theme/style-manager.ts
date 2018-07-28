@@ -25,7 +25,7 @@ export interface StyleManager {
     destroy(): void;
 }
 
-export const STYLE_SELECTOR = isFirefox()
+export const STYLE_SELECTOR = true // isFirefox()
     ? 'html link[rel*="stylesheet" i], html style'
     : 'html /deep/ link[rel*="stylesheet" i], html /deep/ style';
 

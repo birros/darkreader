@@ -85,6 +85,7 @@ export function getModifiedUserAgentStyle(filter: FilterConfig, isIFrame: boolea
     lines.push(`    background-color: ${modifyBackgroundColor({r: 250, g: 255, b: 189}, filter)} !important;`);
     lines.push(`    color: ${modifyForegroundColor({r: 0, g: 0, b: 0}, filter)} !important;`);
     lines.push('}');
+    /*
     if (!isMacOS()) {
         lines.push('::-webkit-scrollbar {');
         lines.push(`    background-color: ${modifyBackgroundColor({r: 241, g: 241, b: 241}, filter)};`);
@@ -103,6 +104,7 @@ export function getModifiedUserAgentStyle(filter: FilterConfig, isIFrame: boolea
         lines.push(`    background-color: ${modifyBackgroundColor({r: 255, g: 255, b: 255}, filter)};`);
         lines.push('}');
     }
+    */
     return lines.join('\n');
 }
 
