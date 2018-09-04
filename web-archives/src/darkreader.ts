@@ -1,4 +1,9 @@
 import {createOrUpdateDynamicTheme, removeDynamicTheme} from '../../src/inject/dynamic-theme';
+import ThemeEngines from '../../src/generators/theme-engines';
+
+declare global {
+    let darkreader_default: any;
+}
 
 var enabled = false;
 
@@ -26,15 +31,15 @@ export function enable () {
             useFont: false,
             fontFamily: "Open Sans",
             textStroke: 0,
+            engine: ThemeEngines.dynamicTheme,
             stylesheet: '',
-            custom: [],
-            changeBrowserTheme: false
         },
         fixes: {
             /**
              * Only for wikipedia.org
              * see `src/config/dynamic-theme-fixes.config`
              */
+            url: [],
             invert: [
                 '.mwe-math-element',
                 '.mw-wiki-logo'
