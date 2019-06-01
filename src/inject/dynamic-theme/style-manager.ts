@@ -26,7 +26,7 @@ export interface StyleManager {
     watch(): void;
 }
 
-export const STYLE_SELECTOR = isDeepSelectorSupported()
+export const STYLE_SELECTOR = true // isDeepSelectorSupported()
     ? 'html /deep/ link[rel*="stylesheet" i], html /deep/ style'
     : 'html link[rel*="stylesheet" i], html style';
 
