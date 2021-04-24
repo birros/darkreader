@@ -13,10 +13,11 @@ export async function bgFetch(request: FetchRequest) {
         const id = ++counter;
         resolvers.set(id, resolve);
         rejectors.set(id, reject);
-        chrome.runtime.sendMessage({type: 'fetch', data: request, id});
+        // chrome.runtime.sendMessage({type: 'fetch', data: request, id});
     });
 }
 
+/*
 chrome.runtime.onMessage.addListener(({type, data, error, id}) => {
     if (type === 'fetch-response') {
         const resolve = resolvers.get(id);
@@ -30,3 +31,4 @@ chrome.runtime.onMessage.addListener(({type, data, error, id}) => {
         }
     }
 });
+*/

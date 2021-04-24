@@ -39,6 +39,7 @@ function patchFirefoxJS(/** @type {string} */code) {
 
 /** @type {JSEntry[]} */
 const jsEntries = [
+    /*
     {
         src: 'src/background/index.ts',
         dest: 'background/index.js',
@@ -99,6 +100,16 @@ const jsEntries = [
         },
         watchFiles: null,
     },
+    */
+    {
+        src: 'web-archives/src/darkreader.ts',
+        dest: 'web-archives/build/darkreader.js',
+        reloadType: reload.UI,
+        async postBuild({debug}) {
+            await copyToBrowsers({cwdPath: this.dest, debug});
+        },
+        watchFiles: null,
+    },
 ];
 
 async function bundleJS(/** @type {JSEntry} */entry, {debug, watch}) {
@@ -133,6 +144,7 @@ async function bundleJS(/** @type {JSEntry} */entry, {debug, watch}) {
         strict: true,
         format: 'iife',
         sourcemap: debug ? 'inline' : false,
+        name: 'darkreader'
     });
     await entry.postBuild({debug});
 }

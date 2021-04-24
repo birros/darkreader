@@ -169,6 +169,7 @@ function getModifiedScrollbarStyle(theme: Theme) {
         colorThumbHover = hslToString(lighten(0.1));
         colorThumbActive = hslToString(lighten(0.2));
     }
+    /*
     lines.push('::-webkit-scrollbar {');
     lines.push(`    background-color: ${colorTrack};`);
     lines.push(`    color: ${colorIcons};`);
@@ -190,6 +191,7 @@ function getModifiedScrollbarStyle(theme: Theme) {
         lines.push(`    scrollbar-color: ${colorThumb} ${colorTrack};`);
         lines.push('}');
     }
+    */
     return lines.join('\n');
 }
 
